@@ -9,7 +9,7 @@
       - docker
       - docker-compose
 
-- name: run container
+- name: container hello
   docker_container:
     name: wartest
     image: "{{ image }}"
