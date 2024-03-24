@@ -8,3 +8,16 @@
     name:
       - docker
       - docker-compose
+
+- name: Log into gitlab registry
+  docker_login:
+    registry: https://registry.gitlab.com
+    username: "{{ gitlab_user }}"
+    password: "{{ gitlab_pass }}"
+
+- name: container hello
+  docker_container:
+    name: wartest
+    image: "{{ image }}"
+    ports: 8081:8080
+    state: started        

@@ -1,6 +1,9 @@
 
 - name: install wartest
+  hosts: all
   become: yes
+  vars_files:
+    - secret.yml
   roles:
     - wartest
 
